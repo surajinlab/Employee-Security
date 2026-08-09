@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/employee")
+@RequestMapping("/employee") // use /api/v1
 public class EmployeeController {
 
     @Autowired
     EmployeeService service;
 
-    @GetMapping("/profile")
+    @GetMapping("/profile/{id}")
     public Employee myProfile(@PathVariable long id) {
         return service.getEmployeeById(id);
     }

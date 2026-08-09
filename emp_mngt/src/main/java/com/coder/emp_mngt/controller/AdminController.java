@@ -10,13 +10,13 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/admin")
+@RequestMapping("/admin") // use /api/v1
 public class AdminController {
 
     @Autowired
     EmployeeService service;
 
-    @PostMapping("/employees")
+    @PostMapping("/employee")
     public Employee addEmployee(@RequestBody Employee employee) {
         return service.saveEmployee(employee);
     }
@@ -40,7 +40,6 @@ public class AdminController {
 
     @DeleteMapping("/employees/{id}")
     public String deleteEmployee(@PathVariable Long id) {
-
         service.deleteEmployee(id);
 
         return "Employee removed successfully!";

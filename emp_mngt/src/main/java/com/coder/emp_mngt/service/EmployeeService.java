@@ -43,7 +43,7 @@ public class EmployeeService {
     }
 
     public void deleteEmployee(Long id) {
-
+        repo.deleteById(id);
     }
 
     public Employee updateProfile(long id, Employee newProfile) {
