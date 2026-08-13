@@ -7,13 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping() // use /api/v1
+@RequestMapping("home") // use /api/v1
 public class HomeController {
 
     @Autowired
     HomeService service;
 
-    @GetMapping("/home")
+    @GetMapping
+    public String greet() {
+        return "WELCOME TO EMPLOYEE MANAGEMENT!";
+    }
+
+    @GetMapping("/desc")
     public String description() {
         return service.description();
     }
