@@ -46,7 +46,7 @@ public class AuthService {
         user = userRepository.save(User.builder()
                 .username(signupRequestDto.getUsername())
 //                .password(passwordEncoder.encode(signupRequestDto.getPassword())
-                .password(signupRequestDto.getPassword())
+                .password(passwordEncoder.encode(signupRequestDto.getPassword()))
                 .build()
         );
 
